@@ -11,7 +11,7 @@ public class PositiveLoginTest {
 	public static String url = "https://boratech.herokuapp.com/";
 	static WebDriver driver;
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(url);
 		driver.findElement(By.xpath("//a[text()='Login']")).click();

@@ -32,9 +32,10 @@ public class Steps {
 	DashBoardPage dashBoardPage;
 	RegisterPage registerPage;
 	CreateProfilePage createProfilePage;
+	
 	@Given("User is on Home Page")
 	public void user_is_on_home_page() {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(url);
 		
@@ -129,24 +130,22 @@ public class Steps {
 
 	@Then("Verify Profile Created Message displayed")
 	public void verify_profile_created_message_displayed() {
-	    WebDriverWait wait = new WebDriverWait(driver, 5);
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[text()='Profile Created']")));
+		dashBoardPage.profileCreatedMessageIsDisplayed();
 	}
 	
 	@When("User Click Delete Account")
 	public void user_click_delete_account() {
-	    driver.findElement(By.xpath("//*[normalize-space(text())='Delete My Account']")).click();
+	   dashBoardPage.deleteAccount();
 	}
 
 	@Then("Account is Deleted")
 	public void account_is_deleted() {
-	    WebDriverWait wait  = new WebDriverWait(driver, 5);
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[text()='Your account has been permanantly deleted']")));
+		loginPage.verifyDeletedAccountMessage();
 	}
 	
 	@When("User accept the alert")
 	public void user_accept_the_alert() {
-		driver.switchTo().alert().accept();
+		dashBoardPage.acceptDeleteAccountAlert();
 	}
 	
 	

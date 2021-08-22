@@ -18,6 +18,7 @@ public class LoginPage extends BasePage{
 	private By input_Email = By.name("email");
 	private By input_Password = By.name("password");
 	private By btn_Login = By.xpath("//input[@type='submit' and @value='Login']");
+	private By deletedAccountMessage = By.xpath("//*[text()='Your account has been permanantly deleted']");
 	
 	public void isAtLoginPage() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -32,4 +33,8 @@ public class LoginPage extends BasePage{
 		
 	}
 	
+	public void verifyDeletedAccountMessage() {
+		WebDriverWait wait  = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.presenceOfElementLocated(deletedAccountMessage));
+	}
 }

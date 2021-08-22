@@ -23,6 +23,7 @@ public class CreateProfilePage extends BasePage {
 	private By input_skills = By.name("skills");
 	private By input_github = By.name("githubusername");
 	private By btn_submit = By.xpath("//input[@type='submit']");
+	private By header_verifyprofile = By.xpath("//*[text()='Profile Created']");
 	
 	public void createProfile(String status, String company, String website, String location, String skills,
 			String github) {
@@ -40,6 +41,10 @@ public class CreateProfilePage extends BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.presenceOfElementLocated(header_ProfilePageHeader));
 
+	}
+	public void Verifydisplay() {
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+	    wait.until(ExpectedConditions.presenceOfElementLocated(header_verifyprofile));
 	}
 
 }

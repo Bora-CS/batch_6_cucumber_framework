@@ -16,6 +16,7 @@ import com.bora.pages.HomePage;
 import com.bora.pages.LoginPage;
 import com.bora.pages.CreateProfilePage;
 import com.bora.pages.DashBoardPage;
+import com.bora.pages.DeleteAccount;
 import com.bora.pages.RegisterPage;
 
 import io.cucumber.datatable.DataTable;
@@ -26,21 +27,23 @@ import io.cucumber.java.en.When;
 public class Steps {
 	static WebDriver driver;
 	public static String url = "https://boratech.herokuapp.com/";
-	
+
 	HomePage homePage;
 	LoginPage loginPage;
 	DashBoardPage dashBoardPage;
 	RegisterPage registerPage;
 	CreateProfilePage createProfilePage;
+	DeleteAccount deleteAccount;
+
 	@Given("User is on Home Page")
 	public void user_is_on_home_page() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
 		driver = new ChromeDriver();
 		driver.get(url);
-		
+
 		homePage = new HomePage(driver);
 		homePage.isAtHomePage();
-		
+
 	}
 
 	@Given("User click on Login button")
@@ -55,22 +58,21 @@ public class Steps {
 	}
 
 	@When("User Enter {string} and {string}")
-	public void user_enter_user_name_and_password(String userName,String password ) {
+	public void user_enter_user_name_and_password(String userName, String password) {
 		loginPage.login(userName, password);
 	}
 
 	@When("User Enter Username and Password")
 	public void user_enter_username_and_password(DataTable table) {
 		List<List<String>> datas = table.asLists();
-		
+
 		List<String> firstRow = datas.get(0);
 		String email = firstRow.get(0);
 		String password = firstRow.get(1);
-		
-		
+
 		loginPage.login(email, password);
 	}
-	
+
 	@Then("User Navigate to Profile Page")
 	public void user_navigate_to_profile_page() {
 		dashBoardPage = new DashBoardPage(driver);
@@ -80,36 +82,31 @@ public class Steps {
 	@When("User Click on Logout button")
 	public void user_click_on_logout_button() {
 		homePage.logout();
-	} 
-	
+	}
+
 	@Then("Browser is Quited")
 	public void browser_is_quited() {
 		driver.quit();
 
 	}
-	
+
 	@When("User click on Register Link")
 	public void user_click_on_register_link() {
 		homePage.clickRegisterLink();
 	}
-	
+
 	@Then("User Navigate to Register Page")
 	public void user_navigate_to_register_page() {
-		
+
 		registerPage = new RegisterPage(driver);
 		registerPage.isAtRegisterPage();
 	}
-	
-	
 
 	@When("User enter {string} {string} {string} and click Register button")
 	public void user_enter_and(String name, String email, String password) {
 		registerPage.registerUser(name, email, password);
 	}
-	
-	
-	
-	
+
 	@When("User Click on Create Profile Link")
 	public void user_click_on_create_profile_link() {
 		dashBoardPage = new DashBoardPage(driver);
@@ -118,39 +115,37 @@ public class Steps {
 
 	@Then("User Navigate to Create Your Profile Page")
 	public void user_navigate_to_create_your_profile_page() {
-	   createProfilePage = new CreateProfilePage(driver);
-	   createProfilePage.isAtCreateProfilePage();
+		createProfilePage = new CreateProfilePage(driver);
+		createProfilePage.isAtCreateProfilePage();
 	}
 
 	@When("User Enters {string} {string} {string} {string} {string} {string} and Click Submit")
-	public void user_enters_profile_infor_and_click_submit(String status, String company, String website, String location, String skills, String github) {
+	public void user_enters_profile_infor_and_click_submit(String status, String company, String website,
+			String location, String skills, String github) {
 		createProfilePage.createProfile(status, company, website, location, skills, github);
 	}
 
 	@Then("Verify Profile Created Message displayed")
 	public void verify_profile_created_message_displayed() {
-	    WebDriverWait wait = new WebDriverWait(driver, 5);
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[text()='Profile Created']")));
+		createProfilePage.Verifydisplay();
 	}
-	
+
 	@When("User Click Delete Account")
 	public void user_click_delete_account() {
-	    driver.findElement(By.xpath("//*[normalize-space(text())='Delete My Account']")).click();
+		deleteAccount = new DeleteAccount(driver);
+		deleteAccount.ClickDeleteAccount();
+
 	}
 
 	@Then("Account is Deleted")
 	public void account_is_deleted() {
-	    WebDriverWait wait  = new WebDriverWait(driver, 5);
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[text()='Your account has been permanantly deleted']")));
+		deleteAccount.AccountIsDeleted();
+
 	}
-	
+
 	@When("User accept the alert")
 	public void user_accept_the_alert() {
-		driver.switchTo().alert().accept();
+		deleteAccount.AcceptTheAlert();
 	}
-	
-	
-	
-	
-	
+
 }

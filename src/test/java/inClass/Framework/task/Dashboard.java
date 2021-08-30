@@ -1,7 +1,8 @@
 package inClass.Framework.task;
 
+import inClass.Framework.resource.Dashboard_Locators;
 
-public class Dashboard{
+public class Dashboard extends SetUpPage {
 	
 	
 	

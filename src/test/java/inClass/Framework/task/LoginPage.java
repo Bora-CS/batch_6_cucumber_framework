@@ -1,5 +1,6 @@
 package inClass.Framework.task;
 
+import inClass.Framework.resource.LoginPage_Locators;
 
 public class LoginPage extends SetUpPage{
 	

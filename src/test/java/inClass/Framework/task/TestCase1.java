@@ -7,7 +7,7 @@ public class TestCase1 extends SetUpPage {
 
 	@Test
 	public void firstTest() {
-
+		startTest();
 		home.clickOnLoginButton();
 
 		// enter userName / Password

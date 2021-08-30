@@ -20,7 +20,7 @@ public class InClass_String {
 		middleThreeChars("Practies");
 		System.out.println(endCharEs("Practice"));
 		System.out.println(endCharEs("s"));;
-		System.out.println(endCharEs("codes"));;
+		System.out.println(endCharEs("codes"));
 	}
 
 //1.

@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -58,11 +59,13 @@ public class SeleniumFunctionalMethod {
 
 	/* Select & Action class */
 
-	public void selectDynamicDropDown(WebDriver driver, By locator, String optionValue) {
+	public void selectDynamicDropDown(WebDriver driver, By locator, final String optionValue) {
 		List<WebElement> options = findElems(locator);
-		options.forEach(option -> {
-			if (option.getAttribute("value").equalsIgnoreCase(optionValue)) {
-				option.click();
+		options.forEach(new Consumer<WebElement>() {
+			public void accept(WebElement option) {
+				if (option.getAttribute("value").equalsIgnoreCase(optionValue)) {
+					option.click();
+				}
 			}
 		});
 	}

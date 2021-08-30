@@ -2,7 +2,7 @@ package inClass.Framework.task;
 
 import inClass.Framework.resource.ExpirencePage_Locators;
 
-public class ExpirencePage{
+public class ExpirencePage extends SetUpPage{
 
 	public void addExpirence() {
 		lib.fillTextBox(ExpirencePage_Locators.jobTtile, BoraTech_TestData.experience_jobTitle);

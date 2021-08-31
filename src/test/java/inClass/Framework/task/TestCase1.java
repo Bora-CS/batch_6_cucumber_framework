@@ -7,8 +7,8 @@ public class TestCase1 extends SetUpPage {
 
 	@Test
 	public void firstTest() {
-
-		home.clickOnLoginButton();
+		
+		home.clickOnLoginButton(driver);
 
 		// enter userName / Password
 		login.login(BoraTech_TestData.userName_testAccount, BoraTech_TestData.password_testAccount);
@@ -25,5 +25,7 @@ public class TestCase1 extends SetUpPage {
 		edu.addEducation();
 
 	}
+
+	
 
 }

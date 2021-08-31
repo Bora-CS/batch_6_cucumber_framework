@@ -6,13 +6,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import inClass.Framework.resource.SeleniumFunctionalMethod;
 
 public class SetUpPage {
 
 	static WebDriver driver;
-	private String url = "https://boratech.herokuapp.com/";
+	private static String url = "https://boratech.herokuapp.com/";
 
 	public static SeleniumFunctionalMethod lib;
 
@@ -22,23 +24,22 @@ public class SetUpPage {
 	public static ExpirencePage expirence = new ExpirencePage();
 	public static EducationPage edu = new EducationPage();
 
-	@Before
-	public void startTest() {
-		setUpDriver();
-
+	@BeforeMethod
+	public static void startTest() {
+//		setUpDriver();
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+		lib = new SeleniumFunctionalMethod(driver);
 		lib.openUrl(url);
 	}
 
-	@After
+	@AfterMethod
 	public void endTest() {
 		driver.close();
 		driver.quit();
 	}
 
-
-	private void setUpDriver() {
+	private static void setUpDriver() {
 		String os = System.getProperty("os.name");
 		String driverPath = "";
 		if (os.toLowerCase().startsWith("mac")) {
@@ -47,6 +48,6 @@ public class SetUpPage {
 			driverPath = "src/test/resources/drivers/chromedriver.exe";
 		}
 
-		driver = new ChromeDriver();
+
 	}
 }

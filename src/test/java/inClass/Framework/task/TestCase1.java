@@ -4,10 +4,9 @@ import org.junit.Test;
 
 public class TestCase1 extends SetUpPage {
 
-
 	@Test
 	public void firstTest() {
-		
+
 		home.clickOnLoginButton(driver);
 
 		// enter userName / Password
@@ -25,7 +24,5 @@ public class TestCase1 extends SetUpPage {
 		edu.addEducation();
 
 	}
-
-	
 
 }

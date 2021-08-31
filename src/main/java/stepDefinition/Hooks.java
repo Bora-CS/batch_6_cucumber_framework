@@ -4,7 +4,10 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 public class Hooks {
-	
+	@Before
+	public void startTest() {
+		
+	}
 //	@Before(order = 0)
 //	public void beforeEachScenario1() {
 //		System.out.println("======= Before Each Scenario 1 ========");

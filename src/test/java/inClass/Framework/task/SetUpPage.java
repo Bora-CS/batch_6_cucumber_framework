@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import inClass.Framework.resource.SeleniumFunctionalMethod;
 
@@ -25,6 +27,7 @@ public class SetUpPage {
 	@Before
 	public void startTest() {
 		setUpDriver();
+		
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -46,7 +49,7 @@ public class SetUpPage {
 		} else if (os.toLowerCase().startsWith("windows")) {
 			driverPath = "src/test/resources/drivers/chromedriver.exe";
 		}
-
+		System.setProperty("webdriver.chrome.driver",driverPath);
 		driver = new ChromeDriver();
 	}
 }

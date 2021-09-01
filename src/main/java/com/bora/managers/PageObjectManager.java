@@ -17,6 +17,7 @@ public class PageObjectManager {
 	private DashBoardPage dashBoardPage;
 	private LoginPage loginPage;
 	private RegisterPage registerPage;
+	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
 	}

@@ -1,46 +1,34 @@
-package stepDefinition;
+package com.bora.steps;
 
-import java.util.List;
-
-import org.openqa.selenium.WebDriver;
-
-import com.bora.helpers.ConfigReader;
 import com.bora.helpers.SeleniumHelper;
 import com.bora.managers.PageObjectManager;
-import com.bora.pages.BasePage;
 
 import cucumber.TestContext;
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import stepDefinition.WebDriverManager;
 
-public class Steps{
+public class CommonSteps {
 
-
-	
 	TestContext testContext;
 	WebDriverManager driverManager;
 	PageObjectManager pages;
-	
-	public Steps(TestContext passedContext) {
+
+	public CommonSteps(TestContext passedContext) {
 		testContext = passedContext;
 		driverManager = testContext.getDriverManager();
 		pages = testContext.getPages();
 	}
-	
-	
-	
 
+	@Then("Browser is Quited")
+	public void browser_is_quited() {
+		driverManager.closeDriver();
 
+	}
 
-
-
-
-
-
-
-
-
+	@When("User accept the alert")
+	public void user_accept_the_alert() {
+		SeleniumHelper.acceptAlert(driverManager.getDriver());
+	}
 
 }

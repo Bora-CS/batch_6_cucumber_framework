@@ -1,14 +1,10 @@
 package com.bora.steps;
 
 import com.bora.helpers.ConfigReader;
-import com.bora.managers.PageObjectManager;
 import com.bora.pages.HomePage;
-
 import cucumber.TestContext;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import stepDefinition.WebDriverManager;
 
 public class HomePageSteps {
 
@@ -41,5 +37,9 @@ public class HomePageSteps {
 		home.logout();
 	}
 
+	@When("User click on Register Link")
+	public void user_click_on_register_link() {
+		home.clickRegisterLink();
+	}
 
 }

@@ -2,21 +2,23 @@ package com.bora.steps;
 
 import java.util.List;
 
-import com.bora.managers.PageObjectManager;
 import com.bora.pages.LoginPage;
 
 import cucumber.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import stepDefinition.WebDriverManager;
+
 
 public class LoginPageSteps {
+
 	TestContext testContext;
 	LoginPage login;
 
 	public LoginPageSteps(TestContext passedContext) {
 		testContext = passedContext;
+
+		login = testContext.getPages().getLoginPage();
 
 		login = testContext.getPages().getLoginPage();
 
@@ -43,5 +45,4 @@ public class LoginPageSteps {
 
 		login.login(email, password);
 	}
-
 }

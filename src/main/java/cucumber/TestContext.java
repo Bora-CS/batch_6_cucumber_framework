@@ -5,7 +5,7 @@ import com.bora.managers.PageObjectManager;
 import stepDefinition.WebDriverManager;
 
 public class TestContext {
-	
+
 	private WebDriverManager driverManager;
 	private PageObjectManager pages;
 

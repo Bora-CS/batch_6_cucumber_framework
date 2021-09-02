@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import stepDefinition.WebDriverManager;
 
 public class CommonSteps {
+
 	TestContext testContext;
 	WebDriverManager driverManager;
 	PageObjectManager pages;
@@ -22,7 +23,7 @@ public class CommonSteps {
 	@Then("Browser is Quited")
 	public void browser_is_quited() {
 		driverManager.closeDriver();
-		;
+
 
 	}
 
@@ -30,4 +31,5 @@ public class CommonSteps {
 	public void user_accept_the_alert() {
 		SeleniumHelper.acceptAlert(driverManager.getDriver());
 	}
+
 }

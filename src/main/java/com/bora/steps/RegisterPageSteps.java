@@ -1,12 +1,10 @@
 package com.bora.steps;
 
-
 import com.bora.pages.RegisterPage;
 
 import cucumber.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 
 public class RegisterPageSteps {
 	TestContext testContext;
@@ -28,4 +26,10 @@ public class RegisterPageSteps {
 
 		register.isAtRegisterPage();
 	}
+
+	@When("User enter {string} {string} {string} and click Register button")
+	public void user_enter_and(String name, String email, String password) {
+		register.registerUser(name, email, password);
+	}
+
 }

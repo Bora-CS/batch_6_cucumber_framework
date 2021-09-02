@@ -3,7 +3,8 @@ package stepDefinition;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class HooksPractice {
+
+public class Hooks_practice {
 
 	
 

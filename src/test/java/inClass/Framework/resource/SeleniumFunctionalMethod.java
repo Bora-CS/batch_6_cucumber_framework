@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SeleniumFunctionalMethod {
 
-	WebDriver driver = null;
+	WebDriver driver=null;
 	final boolean Demo = false;
 
 	public SeleniumFunctionalMethod(WebDriver passedDriver) {
@@ -84,7 +84,7 @@ public class SeleniumFunctionalMethod {
 		if (result) {
 			return driver.findElement(locator).isDisplayed();
 		}
-		return false;
+		return true;
 	}
 
 	public boolean isTextFieldEmpty(By locator) {

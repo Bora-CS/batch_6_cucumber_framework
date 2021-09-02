@@ -24,16 +24,15 @@ public class SetUpPage {
 	public static ExpirencePage expirence = new ExpirencePage();
 	public static EducationPage edu = new EducationPage();
 
-	@BeforeMethod
-	public static void startTest() {
+	@Before
+	public void startTest() {
 		setUpDriver();
-		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		lib = new SeleniumFunctionalMethod(driver);
 		lib.openUrl(url);
 	}
 
-	@AfterMethod
+	@After
 	public void endTest() {
 		driver.close();
 		driver.quit();

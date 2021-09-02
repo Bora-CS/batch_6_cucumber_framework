@@ -1,7 +1,7 @@
 package inClass.Framework.task;
 
 
-public class Dashboard{
+public class Dashboard extends SetUpPage{
 	
 	
 	

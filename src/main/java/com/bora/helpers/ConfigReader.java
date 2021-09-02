@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.bora.enums.BrowserType;
+import com.bora.enums.EnvironmentType;
+
 public class ConfigReader {
 	
 	private final String propertyFilePath = "src/test/resources/com/bora/config/Config.properties";
@@ -94,5 +97,43 @@ public class ConfigReader {
 		}
 	}
 	
+	public BrowserType getBrowserName() {
+		String browserName = properties.getProperty("browserName");
+		if(browserName != null && browserName.equalsIgnoreCase("Chrome")) {
+			return BrowserType.CHROME;
+		} 
+		else if (browserName != null && browserName.equalsIgnoreCase("Firefox")) {
+			return BrowserType.FIREFOX;
+		}
+		else if (browserName != null && browserName.equalsIgnoreCase("IE")) {
+			return BrowserType.IE;
+		}
+		else {
+			throw new RuntimeException("Browser Name key value in config.properties does not exist");
+		}
+	}
+	
+	public EnvironmentType getEnvironmentType() {
+		String environmentType = properties.getProperty("environment");
+		if(environmentType != null && environmentType.equalsIgnoreCase("local")) {
+			return EnvironmentType.LOCAL;
+		}
+		else if(environmentType != null && environmentType.equalsIgnoreCase("remote")) {
+			return EnvironmentType.REMOTE;
+		}
+		else {
+			throw new RuntimeException("Environment Type key value in config.properties does not exist");
+		}
+	}
+	
+	public boolean getBrowserWindowSize() {
+		String windowSize = properties.getProperty("maximizeWindow");
+		if(windowSize != null) {
+			return Boolean.valueOf(windowSize);
+		} 
+		else {
+			throw new RuntimeException("WindowMaximize key value in config.properties does not exist");
+		}
+	}
 	
 }

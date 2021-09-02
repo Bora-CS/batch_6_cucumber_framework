@@ -7,20 +7,32 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.bora.managers.PageObjectManager;
+
 import inClass.Framework.resource.SeleniumFunctionalMethod;
+import io.cucumber.java.en.Given;
+import stepDefinition.WebDriverManager;
 
 public class SetUpPage {
 
 	static WebDriver driver;
-	private String url = "https://boratech.herokuapp.com/";
 
 	public static SeleniumFunctionalMethod lib;
-
-	public static HomePage home = new HomePage();
-	public static LoginPage login = new LoginPage();
-	public static Dashboard dashboard = new Dashboard();
-	public static ExpirencePage expirence = new ExpirencePage();
-	public static EducationPage edu = new EducationPage();
+	
+	PageObjectManager pageObjectManager;
+	
+	@Given("User is on Home Page")
+	public void user_is_on_home_page() {
+	
+	//	System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath());
+	//	driver = new ChromeDriver();
+		WebDriverManager driverManager = new WebDriverManager();
+		driver = driverManager.getDriver();
+		 pageObjectManager = new PageObjectManager(driver);
+		 
+		//driver.get(configReader.getUrl());
+		pageObjectManager.getHomePage().isAtHomePage();
+	}
 
 	@Before
 	public void startTest() {

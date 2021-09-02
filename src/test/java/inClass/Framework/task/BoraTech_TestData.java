@@ -1,6 +1,6 @@
 package inClass.Framework.task;
 
-public class BoraTech_TestData {
+public class BoraTech_TestData extends SetUpPage{
 
 	
 	

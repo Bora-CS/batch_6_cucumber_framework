@@ -3,7 +3,12 @@ package stepDefinition;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class Hooks {
+public class HooksPractice {
+	
+	@Before
+	public void startTest() {
+		
+	}
 	
 //	@Before(order = 0)
 //	public void beforeEachScenario1() {

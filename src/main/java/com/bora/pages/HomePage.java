@@ -17,7 +17,9 @@ public class HomePage extends BasePage{
 		this.driver = driver;
 	}
 	
-	
+	public void openUrl(String url) {
+		driver.get(url);
+	}
 	
 	private By header_HomePage = By.xpath("//h1[text()='BoraTech']");
 	private By lnk_Login = By.xpath("//section[@class='landing']//a[text()='Login']");

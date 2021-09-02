@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SeleniumHelper {
 	
 	
-	public static void acceptAlert(WebDriver driver) {
-		driver.switchTo().alert().accept();
+	public static void acceptAlert(WebDriver webDriver) {
+		webDriver.switchTo().alert().accept();
 	}
 	
 	public static void dismissAlert(WebDriver driver) {

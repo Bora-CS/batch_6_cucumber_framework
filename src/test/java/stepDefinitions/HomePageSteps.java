@@ -1,4 +1,4 @@
-package com.bora.steps;
+package stepDefinitions;
 
 import com.bora.helpers.ConfigReader;
 import com.bora.pages.HomePage;

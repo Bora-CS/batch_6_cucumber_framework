@@ -10,7 +10,7 @@ import com.bora.enums.EnvironmentType;
 
 public class ConfigReader {
 	
-	private final String propertyFilePath = "src/test/resources/com/bora/config/Config.properties";
+	private final String propertyFilePath = "src/test/resources/config/Config.properties";
 	private Properties properties;
 	
 	private static  ConfigReader configReader = new ConfigReader();
@@ -126,9 +126,9 @@ public class ConfigReader {
 		}
 	}
 	
-	public boolean getBrowserMaximize() {
+	public boolean getBrowseMaximize() {
 		String maximize = properties.getProperty("maximizeWindow");
-		if(maximize!=null) {
+		if(windowSize!=null) {
 			return Boolean.valueOf(maximize);
 		}
 		else {

@@ -32,7 +32,7 @@ public class Hooks {
 		// setup DB connection - JDBC
 		// setup log - Log4J
 		// setup cookie
-
+	
 
 	}
 

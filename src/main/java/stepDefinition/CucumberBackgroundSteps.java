@@ -1,8 +1,16 @@
 package stepDefinition;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.bora.helpers.ConfigReader;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.messages.internal.com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 
 public class CucumberBackgroundSteps {
 	
@@ -29,6 +37,13 @@ public class CucumberBackgroundSteps {
 	@Then("step two")
 	public void step_two() {
 	  System.out.println("This is step two");
+	}
+	
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath());
+		WebDriver driver = new ChromeDriver();
+		TakesScreenshot takeScreenshot = (TakesScreenshot)driver;
+		File srcFile =  takeScreenshot.getScreenshotAs(OutputType.FILE);
 	}
 
 }

@@ -2,24 +2,37 @@ package com.bora.steps;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import com.bora.managers.PageObjectManager;
+=======
+>>>>>>> c1480790efb5191e13413ca179ba351bfa4389ed
 import com.bora.pages.LoginPage;
 
 import cucumber.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD
 import stepDefinition.WebDriverManager;
 
 public class LoginPageSteps {
+=======
+
+public class LoginPageSteps {
+
+>>>>>>> c1480790efb5191e13413ca179ba351bfa4389ed
 	TestContext testContext;
 	LoginPage login;
 
 	public LoginPageSteps(TestContext passedContext) {
 		testContext = passedContext;
+<<<<<<< HEAD
 
 		login = testContext.getPages().getLoginPage();
 
+=======
+		login = testContext.getPages().getLoginPage();
+>>>>>>> c1480790efb5191e13413ca179ba351bfa4389ed
 	}
 
 	@Then("User Navigate to Login Page")

@@ -27,6 +27,15 @@ public class HomePage extends BasePage {
 	public void clickLoginLink() {
 		driver.findElement(lnk_Login).click();
 	}
+<<<<<<< HEAD
+=======
+	
+	
+	public void openUrl(String url) {
+		driver.get(url);
+	}
+	
+>>>>>>> c1480790efb5191e13413ca179ba351bfa4389ed
 
 	public void operUrl(String url) {
 		driver.get(url);

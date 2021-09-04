@@ -13,7 +13,7 @@ Feature: Login Feature
     Then User Navigate to Profile Page
     When User Click on Logout button
     Then User Navigate to Login Page
-    Then Browser is Quited
+    
    
   Examples: 
   |     email         |        password      |

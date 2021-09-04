@@ -7,7 +7,7 @@ public class TestContext {
 	private WebDriverManager driverManager;
 	private PageObjectManager pages;
 	public TestContext() throws Exception {
-		driverManager = new WebDriverManager();
+		driverManager = new WebDriverManager(); 
 		pages = new PageObjectManager(driverManager.getDriver());
 	}
 	public WebDriverManager getDriverManager() {

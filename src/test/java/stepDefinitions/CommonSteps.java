@@ -18,7 +18,7 @@ public class CommonSteps {
 			driverManager = context.getDriverManager();
 			pages = context.getPages();
 	}
-	
+	 
 	@Then("Browser is Quited")
 	public void browser_is_quited() {
 		driverManager.closeDriver();

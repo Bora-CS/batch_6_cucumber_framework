@@ -15,7 +15,7 @@ public class HomePageSteps {
 	public HomePageSteps(TestContext passedContext) {
 		testContext = passedContext;
 
-		home = testContext.getPages().getHomePage();
+		home = testContext.getPages().getHomePage(); 
 	}
 
 	@Given("User is on Home Page")

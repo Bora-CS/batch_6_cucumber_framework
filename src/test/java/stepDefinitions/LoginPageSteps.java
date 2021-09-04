@@ -1,4 +1,4 @@
-package com.bora.steps;
+package stepDefinitions;
 
 import java.util.List;
 

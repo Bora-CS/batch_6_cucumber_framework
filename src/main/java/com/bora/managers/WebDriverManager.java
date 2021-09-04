@@ -35,6 +35,7 @@ public class WebDriverManager {
 
 	private WebDriver createDriver() throws Exception {
 		
+		try {
 		
 		switch (environmentType) {
 		case LOCAL: driver = createLocalDriver();
@@ -44,9 +45,12 @@ public class WebDriverManager {
 
 		}
 		return driver;
-
+		}catch(Exception e) {
+	
+			e.printStackTrace();
 	}
-
+		return driver;
+	}
 	private WebDriver createLocalDriver() throws Exception {
 			
 		switch(browserType) {

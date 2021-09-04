@@ -40,10 +40,10 @@ public class CucumberBackgroundSteps {
 	}
 	
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath());
-		WebDriver driver = new ChromeDriver();
-		TakesScreenshot takeScreenshot = (TakesScreenshot)driver;
-		File srcFile =  takeScreenshot.getScreenshotAs(OutputType.FILE);
+//		System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath());
+//		WebDriver driver = new ChromeDriver();
+//		TakesScreenshot takeScreenshot = (TakesScreenshot)driver;
+//		File srcFile =  takeScreenshot.getScreenshotAs(OutputType.FILE);
 	}
 
 }

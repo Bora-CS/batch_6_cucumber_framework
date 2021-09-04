@@ -12,8 +12,8 @@ public class HomePageSteps {
 	TestContext testContext;
 	HomePage home;
 
-	public HomePageSteps(TestContext passedContext) {
-		testContext = passedContext;
+	public HomePageSteps(TestContext testContext) {
+		this.testContext = testContext;
 
 		home = testContext.getPages().getHomePage();
 	}

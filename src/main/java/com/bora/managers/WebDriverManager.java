@@ -26,22 +26,25 @@ public class WebDriverManager {
 
 	}
 
-	public WebDriver getDriver() throws Exception {
+	public WebDriver getDriver() {
 		if (driver == null)
 			driver = createDriver();
 
 		return driver;
 	}
 
-	private WebDriver createDriver() throws Exception {
+	private WebDriver createDriver()  {
 		
-		
+		try {
 		switch (environmentType) {
 		case LOCAL: driver = createLocalDriver();
 			break;
 		case REMOTE: driver = createRemotDriver();
 			break;
 
+		}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 		return driver;
 

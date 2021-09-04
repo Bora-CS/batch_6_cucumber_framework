@@ -31,8 +31,6 @@ public class ConfigReader {
 		return configReader;
 	}
 	
-
-	
 	public String getUrl() {
 		String url = properties.getProperty("url");
 		if(url!=null) {
@@ -126,7 +124,7 @@ public class ConfigReader {
 		}
 	}
 	
-	public boolean getBrowserWindowSize() {
+	public boolean getBrowserMaximize() {
 		String windowSize = properties.getProperty("maximizeWindow");
 		if(windowSize != null) {
 			return Boolean.valueOf(windowSize);

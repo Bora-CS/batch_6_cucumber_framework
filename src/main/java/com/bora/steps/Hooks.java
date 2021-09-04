@@ -1,10 +1,13 @@
 package com.bora.steps;
 
+import java.sql.DriverManager;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 
 import com.bora.helpers.ConfigReader;
+import com.bora.managers.PageObjectManager;
+import com.bora.managers.WebDriverManager;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -12,18 +15,17 @@ import io.cucumber.java.Before;
 import Cucumber.TestContext;
 
 public class Hooks {
-
+	
 		
-		TestContext testContext;
 		private WebDriver driver;
 		
-		public Hooks(TestContext passedContext) {
-			testContext = passedContext;
-			driver = testContext.getDriverManager().getDriver();
-		}
-		
+	
 		@Before
 		public void setupTest() {
+			WebDriverManager webDriverManager = new WebDriverManager();
+			driver = webDriverManager.getDriver();
+			
+			pages = new PageObjectManager(DriverManager.getDriver());
 			
 			driver.get(ConfigReader.getInstance().getUrl());
 			driver.manage().window().maximize();

@@ -1,23 +1,41 @@
 package inClass.Framework.task;
 
+import org.openqa.selenium.By;
+
 import inClass.Framework.resource.EducationPage_Locators;
+import io.cucumber.java.en.Then;
 
 public class EducationPage extends SetUpPage {
+	
+	private WebDriver driver;
+	
+	public EducationPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	private By schoolName= By.xpath("//input");
+	private By degree= By.xpath("(//input)[2]");
+	private By fieldOfStudy= By.xpath("(//input)[3]");
+	private By fromDate= By.name("from");
+	private By toDate= By.name("to");
+	private By description= By.xpath("//textarea");
+	private By submitButton= By.cssSelector(".btn.btn-primary.my-1");
 
-	public void addEducation() {
-		lib.fillTextBox(EducationPage_Locators.schoolName, BoraTech_TestData.education_schoolname);
+	@Then("User Adds {string}{string}{string}{string}{string} and {string} to Education")
+	public void addEducation(By locator, String school, String degreeCertificate, String fieldOfStudy, String fromDate, String toDate, String programDescription) {
+		lib.fillTextBox(schoolName, school);
 
-		lib.fillTextBox(EducationPage_Locators.degree, BoraTech_TestData.education_degreeOrCertificate);
+		lib.fillTextBox(degree, degreeCertificate);
 
-		lib.fillTextBox(EducationPage_Locators.fieldOfStudy, BoraTech_TestData.education_fieldOfStudy);
+		lib.fillTextBox(fieldOfStudy, fieldOfStudy);
 
-		lib.fillTextBox(EducationPage_Locators.fromDate, BoraTech_TestData.education_fromDate);
+		lib.fillTextBox(fromDate, fromDate);
 
-		lib.fillTextBox(EducationPage_Locators.toDate, BoraTech_TestData.education_toDate);
+		lib.fillTextBox(toDate, toDate);
 
-		lib.fillTextBox(EducationPage_Locators.description, BoraTech_TestData.education_programDescription);
+		lib.fillTextBox(description, programDescription);
 
-		lib.clickElement(EducationPage_Locators.submitButton);
+		lib.clickElement(submitButton);
 	}
 
 }

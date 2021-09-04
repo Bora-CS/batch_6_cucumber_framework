@@ -64,7 +64,6 @@ public class SeleniumFunctionalMethod {
 			if (option.getAttribute("value").equalsIgnoreCase(optionValue)) {
 				option.click();
 			}
-		});
 	}
 
 	public void selectDropdownByValue(By locator, String value) {

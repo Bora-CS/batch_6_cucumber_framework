@@ -1,6 +1,9 @@
 package stepDefinitions;
+<<<<<<< HEAD:src/test/java/stepDefinitions/RegisterPageSteps.java
 
 
+=======
+>>>>>>> 3f98156505509c0ce8ac604741229ed4b9312986:src/main/java/com/bora/steps/RegisterPageSteps.java
 
 import com.bora.pages.RegisterPage;
 

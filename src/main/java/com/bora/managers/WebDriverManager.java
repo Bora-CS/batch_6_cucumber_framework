@@ -1,4 +1,4 @@
-package stepDefinition;
+package com.bora.managers;
 
 import org.openqa.selenium.WebDriver;
 

@@ -1,8 +1,7 @@
 package cucumber;
 
 import com.bora.managers.PageObjectManager;
-
-import stepDefinition.WebDriverManager;
+import com.bora.managers.WebDriverManager;
 
 public class TestContext {
 	

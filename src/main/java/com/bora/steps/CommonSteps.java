@@ -2,11 +2,11 @@ package com.bora.steps;
 
 import com.bora.helpers.SeleniumHelper;
 import com.bora.managers.PageObjectManager;
+import com.bora.managers.WebDriverManager;
 
 import cucumber.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import stepDefinition.WebDriverManager;
 
 public class CommonSteps {
 

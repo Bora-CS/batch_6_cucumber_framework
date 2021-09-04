@@ -53,7 +53,7 @@ public class ConfigReader {
 		}
 	}
 	
-	public long getImplicityWaitTime() {
+	public boolean getImplicityWaitTime() {
 		String implicityWaitTime = properties.getProperty("implicityWait");
 		if(implicityWaitTime!=null) {
 			long time = Long.parseLong(implicityWaitTime);
@@ -126,10 +126,10 @@ public class ConfigReader {
 		}
 	}
 	
-	public boolean getBrowserWindowSize() {
-		String windowSize = properties.getProperty("maximizeWindow");
-		if(windowSize!=null) {
-			return Boolean.valueOf(windowSize);
+	public boolean getBrowserMaximize() {
+		String maximize = properties.getProperty("maximizeWindow");
+		if(maximize!=null) {
+			return Boolean.valueOf(maximize);
 		}
 		else {
 			throw new RuntimeException("WindowMaximize key value in config.properteis dose not exist.");

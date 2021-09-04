@@ -32,7 +32,7 @@ public class Steps {
 	PageObjectManager pageObjectManager;
 
 	@Given("User is on Home Page")
-	public void user_is_on_home_page() {
+	public void user_is_on_home_page() throws Exception {
 
 		WebDriverManager driverManager = new WebDriverManager();
 		driver = driverManager.getDriver();

@@ -136,4 +136,15 @@ public class ConfigReader {
 		}
 	}
 	
+	public String getScreenshotPath() {
+		
+		String screenShotPath = properties.getProperty("screenshotPath");
+		if(screenShotPath!=null) {
+			return screenShotPath;
+		}
+		else {
+			throw new RuntimeException("screenShotPath is not defined in the config.properties file");
+		}
+	}
+	
 }

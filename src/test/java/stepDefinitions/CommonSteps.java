@@ -1,4 +1,4 @@
-package com.bora.steps;
+package stepDefinitions;
 
 import com.bora.helpers.SeleniumHelper;
 import com.bora.managers.PageObjectManager;

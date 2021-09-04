@@ -27,6 +27,7 @@ public class SetUpPage {
 		setUpDriver();
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		lib = new SeleniumFunctionalMethod(driver);
 
 		lib.openUrl(url);
 	}
@@ -46,7 +47,7 @@ public class SetUpPage {
 		} else if (os.toLowerCase().startsWith("windows")) {
 			driverPath = "src/test/resources/drivers/chromedriver.exe";
 		}
-
+		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
 	}
 }

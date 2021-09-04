@@ -1,4 +1,4 @@
-package com.bora.steps;
+package com.bora.steps.copy2;
 
 import com.bora.pages.CreateProfilePage;
 

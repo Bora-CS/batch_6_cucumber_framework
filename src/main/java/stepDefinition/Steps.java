@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import com.bora.helpers.ConfigReader;
 import com.bora.helpers.SeleniumHelper;
 import com.bora.managers.PageObjectManager;
+import com.bora.managers.WebDriverManager;
 import com.bora.pages.BasePage;
 
 import cucumber.TestContext;

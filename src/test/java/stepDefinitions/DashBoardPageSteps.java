@@ -1,4 +1,4 @@
-package com.bora.steps;
+package stepDefinitions;
 
 <<<<<<< HEAD
 import com.bora.managers.PageObjectManager;

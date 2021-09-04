@@ -53,7 +53,7 @@ public class ConfigReader {
 		}
 	}
 	
-	public boolean getImplicityWaitTime() {
+	public long getImplicityWaitTime() {
 		String implicityWaitTime = properties.getProperty("implicityWait");
 		if(implicityWaitTime!=null) {
 			long time = Long.parseLong(implicityWaitTime);

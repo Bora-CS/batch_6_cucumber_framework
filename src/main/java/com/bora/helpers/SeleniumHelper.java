@@ -1,5 +1,6 @@
 package com.bora.helpers;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,8 +29,14 @@ public class SeleniumHelper {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
-	
-	
-	
+	public static void takeScreenShot(WebDriver driver, String fileName) throws Exception {
+		String timeStamp = UtilityLibrary.getTimeStamp();
+		TakeScreenShot takeScreenShot = takeScreenshot.getScreenShotAs(OutputType.FILE);
+		FilescreenShotFile = takeScreenshot.getScreenshotAs(OutputType.FILE);
+		
+		String screenshotPath = ConfigReader.getInstance().getScreenshotPath() + fileName + ".jpg;"
+				File destinationFile = newFile(screenShotPath);
+		FileUtils.copyFile(screenShotFile), destinationFile);
+	}
 	
 }

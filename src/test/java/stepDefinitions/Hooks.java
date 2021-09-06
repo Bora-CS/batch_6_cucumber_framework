@@ -1,9 +1,5 @@
 package stepDefinitions;
 
-
-import org.openqa.selenium.WebDriver;
-import com.bora.managers.PageObjectManager;
-
 import cucumber.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -29,5 +25,6 @@ public class Hooks {
 
 		testContext.getDriverManager().closeDriver();
 	}
+	
 
 }

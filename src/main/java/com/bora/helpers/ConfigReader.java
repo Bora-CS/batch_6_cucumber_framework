@@ -147,4 +147,15 @@ public class ConfigReader {
 		}
 	}
 	
+	public String getExtentConfigPath() {
+		
+		String extentConfigPath = properties.getProperty("extentConfigPath");
+		if(extentConfigPath!=null) {
+			return extentConfigPath;
+		}
+		else {
+			throw new RuntimeException("extentConfigPath is not defined in the config.properties file");
+		}
+	}
+	
 }

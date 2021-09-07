@@ -2,7 +2,6 @@ package com.bora.managers;
 
 import org.openqa.selenium.WebDriver;
 
-import com.bora.helpers.ConfigReader;
 import com.bora.pages.CreateProfilePage;
 import com.bora.pages.DashBoardPage;
 import com.bora.pages.HomePage;

@@ -1,8 +1,13 @@
 package com.bora.helpers;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,14 +34,15 @@ public class SeleniumHelper {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
-	public static void takeScreenShot(WebDriver driver, String fileName) throws Exception {
+	public static void takeScreenShot(WebDriver driver, String fileName) throws IOException {
 		String timeStamp = UtilityLibrary.getTimeStamp();
-		TakeScreenShot takeScreenShot = takeScreenshot.getScreenShotAs(OutputType.FILE);
-		FilescreenShotFile = takeScreenshot.getScreenshotAs(OutputType.FILE);
+		TakesScreenshot takeScreenshot = (TakesScreenshot)driver;
+		File screenshotFile  = takeScreenshot.getScreenshotAs(OutputType.FILE);
 		
-		String screenshotPath = ConfigReader.getInstance().getScreenshotPath() + fileName + ".jpg;"
-				File destinationFile = newFile(screenShotPath);
-		FileUtils.copyFile(screenShotFile), destinationFile);
+		String screenshotPath = ConfigReader.getInstance().getScreenshotPath() +
+				fileName + "-" + timeStamp + ".jpg";
+		File destinationFile = new File(screenshotPath);
+		FileUtils.copyFile(screenshotFile, destinationFile);
 	}
 	
 }

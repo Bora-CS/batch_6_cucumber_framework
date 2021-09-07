@@ -14,9 +14,9 @@ public class CommonSteps {
 	WebDriverManager driverManager;
 	PageObjectManager pages;
 
-	public CommonSteps(TestContext context) {
-			driverManager = context.getDriverManager();
-			pages = context.getPages();
+	public CommonSteps(TestContext testContext) {
+			driverManager = testContext.getDriverManager();
+			pages = testContext.getPages();
 	}
 	
 	@Then("Browser is Quited")

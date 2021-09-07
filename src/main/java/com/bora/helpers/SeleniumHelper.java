@@ -1,7 +1,13 @@
 package com.bora.helpers;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,7 +35,19 @@ public class SeleniumHelper {
 	}
 
 	
-	
+	public static void takeScreenshot(WebDriver driver, String fileName ) throws IOException {
+		TakesScreenshot takeScreenshot = (TakesScreenshot)driver;
+		File screenShotFile = takeScreenshot.getScreenshotAs(OutputType.FILE);
+		
+		//Save the screenshot
+		
+		String timeStamp = UtilityLibrary.getTimeStamp();
+		
+		String screenshotPath = ConfigReader.getInstance().getScreenshotPath() + 
+				fileName + "-" +  timeStamp + ".jpg"; 
+		File destinationFile = new File(screenshotPath);
+		FileUtils.copyFile(screenShotFile,destinationFile);
+	}
 	
 	
 }

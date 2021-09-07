@@ -8,8 +8,8 @@ import com.bora.managers.WebDriverManager;
 public class TestContext {
 	
 	private WebDriverManager driverManager;
-	private PageObjectManager pages;
-	
+	private PageObjectManager pages; 
+	 
 	
 	public TestContext() throws Exception {
 		driverManager = new WebDriverManager();

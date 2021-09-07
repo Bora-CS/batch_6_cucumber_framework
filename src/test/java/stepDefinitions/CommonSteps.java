@@ -12,12 +12,13 @@ public class CommonSteps {
 
 	
 	WebDriverManager driverManager;
-	PageObjectManager pages;
+	PageObjectManager pages; 
 
 	public CommonSteps(TestContext testContext) {
 			driverManager = testContext.getDriverManager();
 			pages = testContext.getPages();
 	}
+	
 	
 	@Then("Browser is Quited")
 	public void browser_is_quited() {
@@ -28,6 +29,6 @@ public class CommonSteps {
 	@When("User accept the alert")
 	public void user_accept_the_alert() throws Exception {
 		SeleniumHelper.acceptAlert(driverManager.getDriver());
-	}
-
+	} 
+ 
 }

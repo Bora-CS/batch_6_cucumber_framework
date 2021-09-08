@@ -19,11 +19,6 @@ public class CommonSteps {
 			pages = testContext.getPages();
 	}
 	
-	@Then("Browser is Quited")
-	public void browser_is_quited() {
-		driverManager.closeDriver();
-
-	}
 
 	@When("User accept the alert")
 	public void user_accept_the_alert() throws Exception {

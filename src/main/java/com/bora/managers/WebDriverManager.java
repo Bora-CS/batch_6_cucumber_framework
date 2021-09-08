@@ -54,12 +54,12 @@ public class WebDriverManager {
 			
 		switch(browserType) {
 		case CHROME: 
-			System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath() + "chromedriver");
+			System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath() + "chromedriver.exe");
 			driver = new ChromeDriver();
 		    break;
 		
 		case FIREFOX: 
-			System.setProperty("webdriver.gecko.driver", ConfigReader.getInstance().getDriverPath() + "geckodriver");
+			System.setProperty("webdriver.gecko.driver", ConfigReader.getInstance().getDriverPath() + "geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
 		

@@ -19,7 +19,9 @@ import com.bora.managers.WebDriverManager;
 
 import cucumber.TestContext;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 
 //import cucumber.TestContext;
@@ -49,4 +51,32 @@ public class Hooks {
 		testContext.getDriverManager().closeDriver();
 	}
 
+	@AfterStep
+	public void afterStep(Scenario scenario) {
+		if (scenario.isFailed()) {
+			byte[] bytes = SeleniumHelper.takeScreenshot(testContext.getDriverManager().getDriver());
+			scenario.attach(bytes, "image/png", "image");
+		}
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

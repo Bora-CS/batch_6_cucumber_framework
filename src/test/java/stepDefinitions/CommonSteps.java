@@ -5,7 +5,6 @@ import com.bora.managers.PageObjectManager;
 import com.bora.managers.WebDriverManager;
 
 import cucumber.TestContext;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CommonSteps {
@@ -17,12 +16,6 @@ public class CommonSteps {
 	public CommonSteps(TestContext testContext) {
 			driverManager = testContext.getDriverManager();
 			pages = testContext.getPages();
-	}
-	
-	@Then("Browser is Quited")
-	public void browser_is_quited() {
-		driverManager.closeDriver();
-
 	}
 
 	@When("User accept the alert")

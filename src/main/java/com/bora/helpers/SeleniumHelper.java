@@ -11,7 +11,10 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+<<<<<<< HEAD
 import org.openqa.selenium.WebElement;
+=======
+>>>>>>> 044697413696be3234aa3d59e684b678cd422823
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -53,6 +56,7 @@ public class SeleniumHelper {
 		File destinationFile = new File(screenshotPath);
 		FileUtils.copyFile(screenShotFile,destinationFile);
 	}
+<<<<<<< HEAD
 	
 	public static byte[] takeScreenshot(WebDriver driver) {
 		TakesScreenshot takeScreenshot = 
@@ -66,6 +70,89 @@ public class SeleniumHelper {
 	// Select slect dropdown with index
 	// Select slect dropdown with value
 	// Select slect dropdown with visibleText
+=======
+	
+	public static byte[] takeScreenshot(WebDriver driver) {
+		TakesScreenshot takeScreenshot = 
+				((TakesScreenshot)driver);
+		byte[] bytes = takeScreenshot.getScreenshotAs(OutputType.BYTES);
+		return bytes;
+	}
+
+	public static void selectDropdownByIndex(WebDriver driver, By locator, int index) {
+		Select select = new Select(driver.findElement(locator));
+		select.selectByIndex(index);
+	}
+	
+	public static void selectDropdownByVisibleText(WebDriver driver, By locator, String visibleText) {
+		Select select = new Select(driver.findElement(locator));
+		select.selectByVisibleText(visibleText);
+	}
+	
+	public static void selectDropdownByValue(WebDriver driver, By locator, String value) {
+		Select select = new Select(driver.findElement(locator));
+		select.selectByValue(value);
+	}
+	
+	public static String getWindowHandle(WebDriver driver) {
+		return driver.getWindowHandle();
+	}
+	
+	public static Set<String> getWindowHandles(WebDriver driver){
+		return driver.getWindowHandles();
+	}
+	
+	public static void switchToWindow(WebDriver driver, String windowHandle) {
+		driver.switchTo().window(windowHandle);
+		
+	}
+	
+	public static void switchToFrame(WebDriver driver, String name) {
+		driver.switchTo().frame(name);
+	}
+	
+	public static void switchToFrame(WebDriver driver, int index) {
+		driver.switchTo().frame(index);
+	}
+	
+	public static void switchToFrame(WebDriver driver, By locator) {
+		driver.switchTo().frame(driver.findElement(locator));
+	}
+	
+	public static void switchToDefaultContent(WebDriver driver) {
+		driver.switchTo().defaultContent();
+	}
+	
+	public static void minimizeWindow(WebDriver driver, int width , int height) {
+		driver.manage().window().setSize(new Dimension(width, height));
+	}
+	
+	//hover over 
+	public static void hoverElement(WebDriver driver, By locator) {
+		getActions(driver).moveToElement(driver.findElement(locator)).build().perform();
+	}
+	
+	//double click
+	public static void doubleClickElement(WebDriver driver, By locator) {
+		getActions(driver).doubleClick(driver.findElement(locator)).build().perform();
+	}
+	
+	//context click
+	public static void contextClickElement(WebDriver driver, By locator) {
+		getActions(driver).contextClick(driver.findElement(locator)).build().perform();
+	}
+	
+	
+	//drag and drop
+	
+	public static void dragAndDropElement(WebDriver driver, By drag, By drop) {
+		getActions(driver).dragAndDrop(driver.findElement(drag), driver.findElement(drop)).build().perform();
+	}
+	
+	private static Actions getActions(WebDriver driver) {
+		return new Actions(driver);
+	}
+>>>>>>> 044697413696be3234aa3d59e684b678cd422823
 	
 	public static void selectDropDownByIndex(WebDriver driver, By locator, int index) {
 		Select select = new Select(driver.findElement(locator));

@@ -43,6 +43,7 @@ public class Hooks {
 	
 	@AfterStep
 	public void afterStep(Scenario scenario) {
+<<<<<<< HEAD
 		System.out.println(scenario.getName());
 		System.out.println(scenario.getLine());
 
@@ -52,5 +53,16 @@ public class Hooks {
 		}
 
 	}
+=======
+		
+		if(scenario.isFailed()) {
+			byte[] bytes = SeleniumHelper.takeScreenshot(testContext.getDriverManager().getDriver());
+			scenario.attach(bytes, "image/png", "image");
+		}
+		
+	
+	}
+	
+>>>>>>> 044697413696be3234aa3d59e684b678cd422823
 
 }

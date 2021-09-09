@@ -52,4 +52,16 @@ public class SeleniumHelper {
 	
 	
 	
+
+public static byte[] takeScreenshot(WebDriver driver) {
+	TakesScreenshot takeScreenshot = 
+			((TakesScreenshot)driver);
+	byte[] bytes = takeScreenshot.getScreenshotAs(OutputType.BYTES);
+	return bytes;
 }
+}
+
+
+
+
+

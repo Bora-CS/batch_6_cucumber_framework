@@ -2,6 +2,7 @@ package com.bora.helpers;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
@@ -9,7 +10,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumHelper {
@@ -48,8 +53,48 @@ public class SeleniumHelper {
 		FileUtils.copyFile(screenShotFile,destinationFile);
 	}
 
+	public static byte[] takeScreenshot(WebDriver driver) {
+		TakesScreenshot takeScreenshot = 
+				((TakesScreenshot)driver);
+		byte[] bytes = takeScreenshot.getScreenshotAs(OutputType.BYTES);
+		return bytes;
+	}
+	public static void selectDropdown (WebDriver driver , By locator, int index) {
+		Select select = new Select( driver.findElement(locator));
+		
+	}
+	public static void selectDropdownByVisibleName (WebDriver driver , By locator, String visiableText) {
+		Select select = new Select( driver.findElement(locator));
+		select.selectByValue(visiableText);
+		
+	}
 	
+	public static void selectDropdownByValue (WebDriver driver , By locator, String value) {
+		Select select = new Select( driver.findElement(locator));
+		select.selectByValue(value);
+		
+	}
+	public static Set<String> getWindowHandles(WebDriver driver) {
+		return driver.getWindowHandles();
+	}
+	// String mainWindowHandle = ChromeDriver.getWindowHandle();
+    // Set<String> allWindowHandles = driver.getWindowHandles();
+   //
+	public static String getWindowHandle(WebDriver driver) {
+		return driver.getWindowHandle();
+	}  	
 	
-	
+	public static void switchToWindow(WebDriver driver, String windowHandle) {
+		driver.switchTo().window(windowHandle);
+	}
+	public static void switchToFrame(WebDriver driver, String name) {
+		driver.switchTo().frame(name);
+	}
+	public static void hoverElement(WebDriver driver , By locator) {
+		
+		getActions(driver).moveToElement(driver.findElement(locator)).build().perform();
+	}
+	//drag and drop 
+	public static void 
 	
 }

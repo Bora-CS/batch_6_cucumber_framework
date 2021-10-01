@@ -22,7 +22,7 @@ public class HomePage extends BasePage{
 	private By header_HomePage = By.xpath("//h1[text()='BoraTech']");
 	private By lnk_Login = By.xpath("//section[@class='landing']//a[text()='Login']");
 	
-	public void isAtHomePage() {
+	public void isAtPage() {
 		SeleniumHelper.waitForElementPresent(driver, ConfigReader.getInstance().getsmallWait(), header_HomePage);
 	}
 	

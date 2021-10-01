@@ -23,7 +23,7 @@ public class RegisterPageSteps {
 	@Then("User Navigate to Register Page")
 	public void user_navigate_to_register_page() {
 
-		register.isAtRegisterPage();
+		register.isAtPage();
 	}
 
 	@When("User enter {string} {string} {string} and click Register button")

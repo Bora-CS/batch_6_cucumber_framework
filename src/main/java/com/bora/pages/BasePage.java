@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 import com.bora.helpers.ConfigReader;
 
-public class BasePage {
+public abstract class BasePage {
+	
 	
 	private WebDriver driver;
+	
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -15,6 +17,7 @@ public class BasePage {
 	public By lnk_logout = By.xpath("//*[text()='Logout']/parent::a");
 	public By lnk_register = By.xpath("//nav//a[text()='Register']");
 	
+	abstract void isAtPage();
 	
 	public void logout() {
 		driver.findElement(lnk_logout).click();

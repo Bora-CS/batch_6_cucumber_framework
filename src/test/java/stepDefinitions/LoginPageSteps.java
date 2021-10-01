@@ -22,7 +22,7 @@ public class LoginPageSteps {
 	@Then("User Navigate to Login Page")
 	public void user_navigate_to_login_page() {
 
-		login.isAtLoginPage();
+		login.isAtPage();
 	}
 
 	@When("User Enter {string} and {string}")

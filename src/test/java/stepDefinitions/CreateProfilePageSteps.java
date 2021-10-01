@@ -22,7 +22,7 @@ public class CreateProfilePageSteps {
 
 	@Then("User Navigate to Create Your Profile Page")
 	public void user_navigate_to_create_your_profile_page() {
-		profilePage.isAtCreateProfilePage();
+		profilePage.isAtPage();
 	}
 
 	@When("User Enters {string} {string} {string} {string} {string} {string} and Click Submit")

@@ -14,6 +14,11 @@ import com.bora.helpers.ConfigReader;
 
 public class WebDriverManager {
 
+	public static void main(String[] args) {
+       String osName = System.getProperty("os.name");
+       System.out.println(osName);
+	}
+	
 	private WebDriver driver;
 
 	private BrowserType browserType;
@@ -51,15 +56,22 @@ public class WebDriverManager {
 	}
 
 	private WebDriver createLocalDriver() throws Exception {
-			
+		
+		String driverExtension = "";
+		 String osName = System.getProperty("os.name");
+		if(osName.contains("Windows")) {
+			driverExtension = ".exe";
+		}
+		
 		switch(browserType) {
 		case CHROME: 
-			System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath() + "chromedriver");
+			
+			System.setProperty("webdriver.chrome.driver", ConfigReader.getInstance().getDriverPath() + "chromedriver" + driverExtension);
 			driver = new ChromeDriver();
 		    break;
 		
 		case FIREFOX: 
-			System.setProperty("webdriver.gecko.driver", ConfigReader.getInstance().getDriverPath() + "geckodriver");
+			System.setProperty("webdriver.gecko.driver", ConfigReader.getInstance().getDriverPath() + "geckodriver" + driverExtension);
 			driver = new FirefoxDriver();
 			break;
 		

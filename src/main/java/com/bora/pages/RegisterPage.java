@@ -24,7 +24,7 @@ public class RegisterPage  extends BasePage{
 	private By input_password2 = By.name("password2");
 	private By btn_register = By.xpath("//input[@type='submit' and @value='Register']");
 	
-	public void isAtRegisterPage() {
+	public void isAtPage() {
 		SeleniumHelper.waitForElementPresent(driver, ConfigReader.getInstance().getsmallWait(), header_RegisterPage);
 	}
 	

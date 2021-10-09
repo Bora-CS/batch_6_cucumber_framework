@@ -20,7 +20,7 @@ public class RestAssuredTest {
 		headers.put("Contnent-Type", "application/json");
 		httpRequest.headers(headers);
 		
-		String requestBody = "{\"email\": \"killingEm@yahoo.com\", \"Doggo\"}";
+		String requestBody = "{\"email\": \"killingEm@yahoo.com\", \"password\": \"Doggo\"}";
 	
 	//	httpRequest.body("{\r\n" + 
 	//			"	\"name\": \"John Wick" + 
@@ -28,6 +28,7 @@ public class RestAssuredTest {
 	//			"	\"password\": \"Doggo"\n" + 
 	//			"}");
 		
+		httpRequest.body(requestBody);
 		
 		Response httpResponse = httpRequest.request(Method.POST, "/api/auth");
 		int statusCode = httpResponse.getStatusCode();

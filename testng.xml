@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression">
+  <test thread-count="5" name="TestNG">
+    <classes>
+      <class name="TestNG_Tests.TestNGTest"/>
+    </classes>
+  </test> <!-- TestNG -->
+</suite> <!-- Regression -->
+<!–– you can add a class or another test ––>
+<!–– test runs synchronous unless parallel placed in tag ––>
+<!–– parallel = "methods" OR parallel = "classes" ––>
+<!–– can exclude a class with exclude tag and name of that class ––>
+<!–– thread count is # of test cases run at the same time ––>
+<!–– pass data under suite tag with parameters tag with name = "" and value = "" ––>

@@ -47,7 +47,7 @@ public class RestAssuredTest {
 		RequestSpecification httpRequest = RestAssured.given();
 		Response httpResponse = httpRequest.request(Method.GET, "/api/profile/user/5e19e187f503b4001767c6d8");
 		
-		int statusCode = httpResponse.getStatusCode();
+		//int statusCode = httpResponse.getStatusCode();
 		String body  = httpResponse.getBody().asString();
 		//System.out.println("Status Code: " + statusCode);
 		System.out.println("Body: " + body);

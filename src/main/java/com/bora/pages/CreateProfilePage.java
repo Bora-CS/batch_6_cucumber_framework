@@ -39,7 +39,7 @@ public class CreateProfilePage extends BasePage {
 		driver.findElement(btn_submit).click();
 	}
 
-	public void isAtCreateProfilePage() {
+	public void isAtPage() {
 		SeleniumHelper.waitForElementPresent(driver, ConfigReader.getInstance().getsmallWait(), header_ProfilePageHeader);
 	}
 

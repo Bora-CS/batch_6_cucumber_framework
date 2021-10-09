@@ -12,9 +12,12 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7547a6307ecb6474c8d64e9d2e2cd4830e806474
 
 
-//import cucumber.TestContext;
 
 public class Hooks {
 
@@ -24,6 +27,7 @@ public class Hooks {
 		this.testContext = testContext;
 	}
 
+	
 	@Before
 	public void setupTest() throws IOException  {
 
@@ -43,6 +47,7 @@ public class Hooks {
 	
 	@AfterStep
 	public void afterStep(Scenario scenario) {
+<<<<<<< HEAD
 		System.out.println(scenario.getName());
 		System.out.println(scenario.getLine());
 
@@ -52,5 +57,23 @@ public class Hooks {
 		}
 
 	}
+=======
+		
+		if(scenario.isFailed()) {
+			byte[] bytes = SeleniumHelper.takeScreenshot(testContext.getDriverManager().getDriver());
+			scenario.attach(bytes, "image/png", "image");
+		}
+		
+	
+	}
+	
+>>>>>>> 7547a6307ecb6474c8d64e9d2e2cd4830e806474
 
+	
+	
+	
 }
+
+
+
+

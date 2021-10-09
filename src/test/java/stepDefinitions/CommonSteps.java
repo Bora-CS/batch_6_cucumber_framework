@@ -18,6 +18,7 @@ public class CommonSteps {
 			pages = testContext.getPages();
 	}
 
+
 	@When("User accept the alert")
 	public void user_accept_the_alert() throws Exception {
 		SeleniumHelper.acceptAlert(driverManager.getDriver());

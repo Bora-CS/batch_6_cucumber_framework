@@ -28,7 +28,7 @@ public class DashBoardPage extends BasePage {
 		driver.findElement(btn_CreateProfile).click();
 	}
 	
-	public void isAtDashBoardPage() {
+	public void isAtPage() {
 		SeleniumHelper.waitForElementPresent(driver, ConfigReader.getInstance().getsmallWait(), header_ProfilePage);
 	}
 	

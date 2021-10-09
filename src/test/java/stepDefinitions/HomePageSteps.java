@@ -23,7 +23,7 @@ public class HomePageSteps {
 
 		home.openUrl(ConfigReader.getInstance().getUrl());
 
-		home.isAtHomePage();
+		home.isAtPage();
 
 	}
 

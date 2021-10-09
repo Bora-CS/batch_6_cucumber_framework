@@ -22,7 +22,7 @@ public class LoginPage extends BasePage{
 	private By input_Password = By.name("password");
 	private By btn_Login = By.xpath("//input[@type='submit' and @value='Login']");
 	
-	public void isAtLoginPage() {
+	public void isAtPage() {
 		SeleniumHelper.waitForElementPresent(driver, ConfigReader.getInstance().getsmallWait(), header_LoginPage);
 	}
 	

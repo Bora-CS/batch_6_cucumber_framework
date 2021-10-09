@@ -23,7 +23,7 @@ public class DashBoardPageSteps {
 	@Then("User Navigate to Profile Page")
 	public void user_navigate_to_profile_page() {
 
-		dashBoard.isAtDashBoardPage();
+		dashBoard.isAtPage();
 	}
 	
 	@When("User Click on Create Profile Link")

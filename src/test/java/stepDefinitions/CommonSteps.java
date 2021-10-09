@@ -17,6 +17,10 @@ public class CommonSteps {
 			driverManager = testContext.getDriverManager();
 			pages = testContext.getPages();
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 7547a6307ecb6474c8d64e9d2e2cd4830e806474
 
 	@When("User accept the alert")
 	public void user_accept_the_alert() throws Exception {

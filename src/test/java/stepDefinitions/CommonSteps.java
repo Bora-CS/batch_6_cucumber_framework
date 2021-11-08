@@ -23,6 +23,7 @@ public class CommonSteps {
 	@When("User accept the alert")
 	public void user_accept_the_alert() throws Exception {
 		SeleniumHelper.acceptAlert(driverManager.getDriver());
+		
 	}
 
 }

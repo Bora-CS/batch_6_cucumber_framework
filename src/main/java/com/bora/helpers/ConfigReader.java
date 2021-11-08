@@ -11,16 +11,16 @@ import com.bora.enums.EnvironmentType;
 public class ConfigReader {
 	
 	private final String propertyFilePath = "src/test/resources/config/Config.properties";
-	private Properties properties;
+	private Properties properties;           
 	
 	private static  ConfigReader configReader = new ConfigReader();
 	
 	private ConfigReader() {
 		try {
-			FileInputStream stream = new FileInputStream(propertyFilePath);
+			FileInputStream propertyfile = new FileInputStream(propertyFilePath);
 			properties = new Properties();
-			properties.load(stream);
-			stream.close();
+			properties.load(propertyfile);
+			propertyfile.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Property file path not found!!");
@@ -145,6 +145,10 @@ public class ConfigReader {
 		else {
 			throw new RuntimeException("screenShotPath is not defined in the config.properties file");
 		}
+	}
+	public String getJonathanAddress() {
+		String johnathaAdress= properties.getProperty("JonathanAdress");
+		return johnathaAdress;
 	}
 	
 }

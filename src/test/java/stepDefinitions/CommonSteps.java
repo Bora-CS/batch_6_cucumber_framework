@@ -25,4 +25,9 @@ public class CommonSteps {
 		SeleniumHelper.acceptAlert(driverManager.getDriver());
 	}
 
+	
+	public void testGithub() {
+		
+	}
+	
 }

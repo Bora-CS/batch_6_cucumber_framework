@@ -41,5 +41,9 @@ public class HomePageSteps {
 	public void user_click_on_register_link() {
 		home.clickRegisterLink();
 	}
+	
+	public void testGithubCommit() {
+		//This for testing
+	}
 
 }
